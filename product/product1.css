@@ -364,6 +364,12 @@ body {
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent; */
+    color: #FDA34E;
+      
+    display: inline-block;
+}
+
+.predict-flick {
     color: #202A90;
         text-shadow: 
           -2px -2px 0 #FDA34E,  
@@ -372,6 +378,20 @@ body {
            2px  2px 0 #FDA34E; 
       
     display: inline-block;
+}
+/* 
+.animated-text {
+    font-family: "Space Mono", monospace;
+    font-size: clamp(3rem, 10vw, 10rem);
+    text-transform: uppercase;
+
+} */
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 
@@ -637,6 +657,10 @@ body {
 
 }
 
+.card a {
+    text-decoration: none;
+}
+
 
 .cyber-second-right h3 span {
     color: var(--orange);
@@ -753,7 +777,7 @@ input[type="tel"] {
     border: 2px solid #ccc;
     border-radius: 5px;
     box-sizing: border-box;
-    color: #fff;
+    color: #000;
     background-color: transparent;
 }
 
@@ -782,7 +806,6 @@ button[type="submit"]:hover {
     display: flex;
     flex-direction: column;
     gap: 1.1rem;
-
 }
 
 .ticks {
@@ -792,8 +815,7 @@ button[type="submit"]:hover {
 
 .ticks img {
     width: 25px;
-
-
+    height: 25px;
 }
 
 .cyber-right-block img {
@@ -1159,9 +1181,54 @@ button[type="submit"]:hover {
     height: 90px;
 }
 
+
 .schedule-btn-navbar {
-    background: var(--orange);
+    background: #f88a23;
     color: #fff;
+    cursor: pointer;
+    z-index: 0;
+    user-select: none;
+    -webkit-user-select: none;
+    position: relative;
+    touch-action: manipulation;
+}
+
+.schedule-btn-navbar:before {
+    border-radius: 10px;
+    content: "";
+    background: linear-gradient(90deg, #fff,transparent, transparent, #fff);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(8px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing-button 20s linear infinite;
+    transition: opacity 0.3s ease-in-out;
+}
+
+@keyframes glowing-button {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 400% 0;
+    }
+}
+
+.schedule-btn-navbar:after {
+    border-radius: 10px;
+    z-index: -1;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #f99c46;
+    left: 0;
+    top: 0;
+
 }
 
 .footer-spec-box .footer-logo .line {
@@ -1178,27 +1245,47 @@ button[type="submit"]:hover {
     height: 60px;
 }
 
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #ffffff42;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #FDA34E;
+    border-radius: 10px;
+    
+}
+
 
 @media only screen and (max-width:768px) {
 
+    .footer-spec-box {
+        flex-direction: column;
+    }
+
     .nav-btn {
-        background: #172070;
+        background: #fff !important;
         border: none;
-        color: #fff;
+        color: #000;
         font-weight: 500;
         font-size: 1.1rem;
     }
     
     .nav-btn-resource {
-        background: #1C2684;
+        background: #fff !important;
     }
     
     .nav-btn-solutions {
-        background: #1A237C;
+        background: #fff !important;
     }
 
     .home-anchor {
         color: #060A30;
+        font-weight: 700;
         background-color: #fff;
     }
 
@@ -1502,10 +1589,9 @@ button[type="submit"]:hover {
     }
     
     .process-intro-second-image {
-
         width: 250px;
         top: 150px;
-        left: 45%;
+        left: 35%;
     }
 
     .process-intro-second {
@@ -1518,6 +1604,8 @@ button[type="submit"]:hover {
 
     }
 
+    
+
     .cyber-cards {
         width: 100%; 
         flex-direction: column;
@@ -1525,6 +1613,13 @@ button[type="submit"]:hover {
         margin-bottom: 50px;
     }
 
+    .cyber-cards .card {
+        width: 390px;
+    }
+
+    .cyber-cards .card-btn {
+        width: 85%;
+    }
     
 
     .cyber-second {

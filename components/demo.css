@@ -498,3 +498,70 @@ button[type="submit"]:hover {
     font-weight: 700;
     font-size: 1.2rem;
 }
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #ffffff42;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #FDA34E;
+    border-radius: 10px;
+    
+}
+
+
+.schedule-btn-navbar {
+    background: #f88a23;
+    color: #fff;
+    cursor: pointer;
+    z-index: 0;
+    user-select: none;
+    -webkit-user-select: none;
+    position: relative;
+    touch-action: manipulation;
+}
+
+.schedule-btn-navbar:before {
+    content: "";
+    background: linear-gradient(90deg, #fff,transparent, transparent, #fff);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(8px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing-button 20s linear infinite;
+    transition: opacity 0.3s ease-in-out;
+}
+
+@keyframes glowing-button {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 400% 0;
+    }
+}
+
+.schedule-btn-navbar:after {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #f99c46;
+    left: 0;
+    top: 0;
+
+}
+
+.second-tick-txt {
+    font-weight: 1.5rem;
+}

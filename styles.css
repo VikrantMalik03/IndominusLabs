@@ -216,6 +216,7 @@ body {
 .flex-dropdown-sub {
     display: grid;
     grid-template-columns: repeat(2,max-content);
+    text-align: center;
     gap: 1.2rem;
 }
 
@@ -967,7 +968,7 @@ body {
 
 .footer-box a {
     text-decoration: none;
-    color: var(--green);
+    color: #141414;
 
 }
 
@@ -1043,10 +1044,51 @@ body {
 }
 
 .schedule-btn-navbar {
-    background: var(--orange);
+    background: #f88a23;
     color: #fff;
+    cursor: pointer;
+    z-index: 0;
+    user-select: none;
+    -webkit-user-select: none;
+    position: relative;
+    touch-action: manipulation;
 }
 
+.schedule-btn-navbar:before {
+    content: "";
+    background: linear-gradient(90deg, #fff,transparent, transparent, #fff);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(8px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing-button 20s linear infinite;
+    transition: opacity 0.3s ease-in-out;
+}
+
+@keyframes glowing-button {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 400% 0;
+    }
+}
+
+.schedule-btn-navbar:after {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #f99c46;
+    left: 0;
+    top: 0;
+
+}
 
 .footer-logo .love {
     width: 20px;
@@ -1058,11 +1100,27 @@ body {
     height: 60px;
 }
 
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #ffffff42;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #FDA34E;
+    border-radius: 10px;
+    
+}
+
 @media only screen and (max-width:768px) {
 
     .home-anchor {
         color: #060A30;
         background-color: #fff;
+        font-weight: 700;
     }
 
     section {
@@ -1214,9 +1272,11 @@ body {
     }
 
     .prevent-btns {
+        position: relative;
         width: 100%;
         flex-direction: column;
         gap: 1rem;
+        left: -15px;
     }
 
     .prevent-btns a {
@@ -1232,12 +1292,11 @@ body {
         margin: 0;
         padding: 1rem;
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
     }
 
     .prevent-first {
-        width: 95%;
+        width: 100%;
+        left: 0;
     }
 
     .prevent-svg {
@@ -1331,6 +1390,14 @@ body {
 
     }
 
+    .partners-btns a {
+        width: 100%;
+    }
+
+    .partners-btns button {
+        width: 100%;
+    }
+
     .main-footer {
         flex-direction: column;
         gap: 1.5rem;
@@ -1338,6 +1405,6 @@ body {
 
     .footer-spec-box {
         width: 100%;
-
+        flex-direction: column;
     }
 }

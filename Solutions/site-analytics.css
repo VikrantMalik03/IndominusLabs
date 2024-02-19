@@ -190,10 +190,9 @@ body {
    
 }
 
-.down-arrow {
-    width: 18px;
-    height: 15px;
-    color: #fff;
+.res-dropdown {
+    width: 100%;
+    display: block;
 }
 
 .resource-dropdown {
@@ -210,14 +209,65 @@ body {
     height: 100vh;
     box-shadow: none;
     border-radius: 0;
-    z-index: 2;
     background: url(../images/contact-bg.png);
 
 }
 
-.res-dropdown {
-    width: 100%;
-    display: block;
+.contact-main {
+    display: flex;
+    flex-direction: column;
+    gap: 5.5rem;
+    color: #fff;
+    /* align-items: center; */
+    /* justify-content: center; */
+}
+
+.down-arrow {
+    width: 18px;
+    height: 15px;
+    color: #fff;
+}
+
+.resource-flex {
+    display: flex;
+    gap: 2rem;
+}
+
+.resource-flex:hover {
+    background: none !important;
+}
+
+.contact-left {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.contact-left h1 {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    font-size: 3rem;
+    color: var(--orange);
+}
+
+.contact-left p {
+    font-size: 1.3rem !important;
+}
+
+.contact-right {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.contact-right h3 {
+    font-size: 2.5rem !important;
+    color: #060A30;
+}
+
+.contact-right p {
+    font-size: 1.3rem !important;
 }
 
 .grid-component-head {
@@ -225,6 +275,8 @@ body {
     font-size: 1rem;
     font-weight: 500;
 }
+
+
 
 
 /* Hamburger */
@@ -368,6 +420,7 @@ body {
 
 .ticks img {
     width: 25px;
+    height: 25px;
 
 
 }
@@ -608,9 +661,54 @@ body {
     height: 90px;
 }
 
+
 .schedule-btn-navbar {
-    background: var(--orange);
+    background: #f88a23;
     color: #fff;
+    cursor: pointer;
+    z-index: 0;
+    user-select: none;
+    -webkit-user-select: none;
+    position: relative;
+    touch-action: manipulation;
+}
+
+.schedule-btn-navbar:before {
+    border-radius: 10px;
+    content: "";
+    background: linear-gradient(90deg, #fff,transparent, transparent, #fff);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(8px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing-button 20s linear infinite;
+    transition: opacity 0.3s ease-in-out;
+}
+
+@keyframes glowing-button {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 400% 0;
+    }
+}
+
+.schedule-btn-navbar:after {
+    border-radius: 10px;
+    z-index: -1;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #f99c46;
+    left: 0;
+    top: 0;
+
 }
 
 .footer-spec-box .footer-logo .line {
@@ -882,9 +980,28 @@ button[type="submit"]:hover {
     color: var(--orange);
 }
 
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #ffffff42;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #FDA34E;
+    border-radius: 10px;
+    
+}
+
 
 
 @media only screen and (max-width:768px) {
+
+    .footer-spec-box {
+        flex-direction: column;
+    }
 
     .home-anchor {
         color: #060A30;
@@ -908,7 +1025,6 @@ button[type="submit"]:hover {
     }
 
     section {
-        /* height: 100vh; */
         margin: 5px;
     }
 
@@ -960,8 +1076,12 @@ button[type="submit"]:hover {
         width: 350px;
     }
     .logo img {
-        width: 30px;
-        height: 30px;
+        width: 130px;
+        height: 50px;
+    }
+
+    .bar {
+        background: #fff;
     }
 
     .nav-links {
@@ -1154,6 +1274,8 @@ button[type="submit"]:hover {
         flex-direction: column;
         height: 100vh;
         margin: 5px;
+        margin-top: 150px;
+
 
     }
 
@@ -1164,7 +1286,7 @@ button[type="submit"]:hover {
     
     .process-intro-second-image {
         /* display: none; */
-        width: 250px;
+        width: 200px;
         top: 150px;
         left: 45%;
     }
@@ -1205,6 +1327,7 @@ button[type="submit"]:hover {
         padding: 7px;
         /* align-items: center; */
         justify-content: center;
+        margin-top: 120px;
         margin-bottom: 50px;
 
     }
@@ -1221,13 +1344,23 @@ button[type="submit"]:hover {
     }
 
     .cyber-threat-intro {
+        margin: 0;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        width: 100%;
+    }
+
+    .cyber-btns {
+        flex-direction: column;
+    }
+
+    .cyber-btns a button{
+        width: 100%;
     }
 
     .cyber-right-block img {
-        width: 450px;
+        width: 380px;
     }
 
     .cyber-second-left img {

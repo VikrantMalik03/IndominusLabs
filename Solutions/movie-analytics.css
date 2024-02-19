@@ -191,10 +191,9 @@ body {
    
 }
 
-.down-arrow {
-    width: 18px;
-    height: 15px;
-    color: #fff;
+.res-dropdown {
+    width: 100%;
+    display: block;
 }
 
 .resource-dropdown {
@@ -211,14 +210,65 @@ body {
     height: 100vh;
     box-shadow: none;
     border-radius: 0;
-    z-index: 2;
     background: url(../images/contact-bg.png);
 
 }
 
-.res-dropdown {
-    width: 100%;
-    display: block;
+.contact-main {
+    display: flex;
+    flex-direction: column;
+    gap: 5.5rem;
+    color: #fff;
+    /* align-items: center; */
+    /* justify-content: center; */
+}
+
+.down-arrow {
+    width: 18px;
+    height: 15px;
+    color: #fff;
+}
+
+.resource-flex {
+    display: flex;
+    gap: 2rem;
+}
+
+.resource-flex:hover {
+    background: none !important;
+}
+
+.contact-left {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.contact-left h1 {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    font-size: 3rem;
+    color: var(--orange);
+}
+
+.contact-left p {
+    font-size: 1.3rem !important;
+}
+
+.contact-right {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.contact-right h3 {
+    font-size: 2.5rem !important;
+    color: #060A30;
+}
+
+.contact-right p {
+    font-size: 1.3rem !important;
 }
 
 .grid-component-head {
@@ -226,6 +276,8 @@ body {
     font-size: 1rem;
     font-weight: 500;
 }
+
+
 
 
 /* Hamburger */
@@ -452,8 +504,7 @@ body {
 
 .ticks img {
     width: 25px;
-
-
+    height: 25px;
 }
 
 .cyber-right-block img {
@@ -755,9 +806,54 @@ button[type="submit"]:hover {
     height: 90px;
 }
 
+
 .schedule-btn-navbar {
-    background: var(--orange);
+    background: #f88a23;
     color: #fff;
+    cursor: pointer;
+    z-index: 0;
+    user-select: none;
+    -webkit-user-select: none;
+    position: relative;
+    touch-action: manipulation;
+}
+
+.schedule-btn-navbar:before {
+    border-radius: 10px;
+    content: "";
+    background: linear-gradient(90deg, #fff,transparent, transparent, #fff);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(8px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing-button 20s linear infinite;
+    transition: opacity 0.3s ease-in-out;
+}
+
+@keyframes glowing-button {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 400% 0;
+    }
+}
+
+.schedule-btn-navbar:after {
+    border-radius: 10px;
+    z-index: -1;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #f99c46;
+    left: 0;
+    top: 0;
+
 }
 
 .footer-spec-box .footer-logo .line {
@@ -837,10 +933,41 @@ button[type="submit"]:hover {
     color: var(--orange);
 }
 
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #ffffff42;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #FDA34E;
+    border-radius: 10px;
+    
+}
+
 
 
 
 @media only screen and (max-width:768px) {
+
+    .footer-spec-box {
+        flex-direction: column;
+    }
+
+    .cyber-btns {
+        flex-direction: column;
+    }
+    
+    .cyber-btns a {
+        width: 100%;
+    }
+
+    .cyber-btns button {
+        width: 100%;
+    }
 
     .home-anchor {
         color: #060A30;
@@ -848,19 +975,19 @@ button[type="submit"]:hover {
     }
 
     .nav-btn {
-        background: #172070;
+        background: #fff;
         border: none;
-        color: #fff;
+        color: #000;
         font-weight: 500;
         font-size: 1.1rem;
     }
     
     .nav-btn-resource {
-        background: #1C2684;
+        background: #fff;
     }
     
     .nav-btn-solutions {
-        background: #1A237C;
+        background: #fff;
     }
 
     section {
@@ -916,8 +1043,8 @@ button[type="submit"]:hover {
         width: 350px;
     }
     .logo img {
-        width: 30px;
-        height: 30px;
+        width: 130px;
+        height: 60px;
     }
 
     .nav-links {
@@ -938,6 +1065,11 @@ button[type="submit"]:hover {
         flex-direction: column;
         padding: 20px;
         margin-bottom: 50px;
+        margin-top: 350px;
+    }
+
+    .cyber-cards .card {
+        width: 390px;
     }
 
     .bar {
@@ -1170,7 +1302,7 @@ button[type="submit"]:hover {
         /* align-items: center; */
         justify-content: center;
         margin-bottom: 50px;
-
+        margin-top: 100px;
     }
 
     form {
@@ -1187,15 +1319,17 @@ button[type="submit"]:hover {
     .cyber-threat-intro {
         flex-direction: column;
         justify-content: center;
+        margin: 0;
+        /* padding: 0; */
         align-items: center;
     }
 
     .cyber-right-block img {
-        width: 450px;
+        width: 390px;
     }
 
     .cyber-second-left img {
-        width: 500px;
+        width: 400px;
 
     }
 
