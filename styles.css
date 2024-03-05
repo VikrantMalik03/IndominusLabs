@@ -5,15 +5,14 @@
     --bg-color: #FFFF;
     --text-main: #333333;
     --button-txt: #F5F5DC;
-    --orange: #FDA34E;
-    --green: #084B83;
+    --orange: #182177;
+    --green: #182177;
 }
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
 }
 
 .main-svg {
@@ -113,7 +112,7 @@ body {
 }
 
 .home-anchor:hover {
-    color: var(--orange);
+    color: #b3b3b8;
 }
 
 .nav-btn {
@@ -161,7 +160,7 @@ body {
 
 .dropdown.active > .nav-btn,
 .nav-btn:hover {
-    color: var(--orange);
+    color: #b3b3b8;
 } 
 
 .flex-dropdown {
@@ -237,7 +236,7 @@ body {
     /* grid-template-columns: repeat(2, max-content); */
     padding: 2rem;
     /* width: fit-content; */
-    left: -1120%;
+    left: -990%;
     /* overflow-x: hidden; */
     top: 65px;
     /* border: 1px solid #000; */
@@ -345,8 +344,8 @@ body {
 
 .schedule-btn:hover {
     background-color: var(--bg-color);
-    color: var(--green);
-    border: 3px solid var(--orange);
+    color: var(--text-main);
+    border: 3px solid #172070;
     cursor: pointer;
 }
 
@@ -364,7 +363,7 @@ body {
     border:1px solid var(--green);
     border-bottom: 3px solid var(--green);
     cursor: pointer;
-    background-color: var(--orange);
+    background-color: #172070;
     color: #fff;
 }
 
@@ -420,7 +419,7 @@ body {
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent; */
-    color: #fcb068;
+    color: #1f2daf;
     display: inline-block;
 }
 
@@ -502,7 +501,7 @@ body {
 
 .cards-section {
     display: grid;
-    grid-template-columns: repeat(4, max-content);
+    grid-template-columns: repeat(2, max-content);
     gap: 1.5rem;
 }
 
@@ -524,11 +523,11 @@ body {
 
 .card:hover{
     transform: scale(0.95);
-    border-bottom: 3px solid var(--orange);
+    border-bottom: 3px solid #1f2daf;
 }
 
 .card-btn {
-    width: 90%;
+    width: 100%;
     padding: 1.2rem 2rem;
     background: var(--bg-color);
     border-radius: 30px;
@@ -541,7 +540,7 @@ body {
 
 .card-btn:hover {
     color: var(--button-txt);
-    background: var(--orange);
+    background: #172070;
     transform: scale(1.1);
 }
 
@@ -608,7 +607,7 @@ body {
 
 .card-two:hover {
     transform: scale(0.95);
-    border-bottom: 3px solid var(--orange);
+    border-bottom: 3px solid #1f2daf;
 }
 
 .card-two div {
@@ -630,7 +629,7 @@ body {
 }
 
 .read-more:hover {
-    color: #f9be87;
+    color: #1f2daf;
 }
 
 .threecard-box {
@@ -820,7 +819,7 @@ body {
 }
 
 .swiper-navBtn:hover {
-    color: #FF66B3;
+    color: #1f2daf;
 }
 
 .swiper-pagination-bullet-active {
@@ -1045,7 +1044,7 @@ body {
 }
 
 .schedule-btn-navbar {
-    background: #f88a23;
+    background: #182177;
     color: #fff;
     cursor: pointer;
     z-index: 0;
@@ -1085,7 +1084,7 @@ body {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: #f99c46;
+    background: #182177;
     left: 0;
     top: 0;
 
@@ -1111,7 +1110,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #FDA34E;
+    background-color: #172070;
     border-radius: 10px;
     
 }
