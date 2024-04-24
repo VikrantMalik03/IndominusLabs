@@ -467,6 +467,7 @@ body {
 
 .product1-main-img {
     position: relative;
+    margin-bottom: 50px;
     opacity: 1;
     width: 60%;
     border-radius: 1rem;
@@ -539,6 +540,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.flick-card {
+    margin-top: 100px;
 }
 
 .cards-section-two {

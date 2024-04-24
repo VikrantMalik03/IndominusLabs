@@ -13,7 +13,6 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
 }
 
 section {
@@ -196,7 +195,7 @@ body {
     /* grid-template-columns: repeat(2, max-content); */
     padding: 2rem;
     /* width: fit-content; */
-    left: -1120%;
+    left: -1063%;
     /* overflow-x: hidden; */
     top: 65px;
     /* border: 1px solid #000; */
